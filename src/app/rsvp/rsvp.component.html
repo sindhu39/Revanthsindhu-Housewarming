@@ -1,0 +1,31 @@
+<div class="invitation">
+    <img src="/assets/invitation5-jobsearch1.jpg" alt="Overlay Image" class="overlay-image" />
+  
+    <div class="details">
+        <div class="venue">
+      <h2>Venue: 10112 Tidwell st krugerville tx 76227</h2>
+      <p>We look forward to your presence to bless our home with your love and support.</p>
+    </div>
+
+    </div>
+  
+    <div class="rsvp">
+      <h2>RSVP</h2>
+      <form (submit)="submitRsvp()">
+        <label for="name">Name:</label>
+        <input type="text" id="name" [(ngModel)]="name" name="name" required>
+        
+        <label for="email">Email:</label>
+        <input type="email" id="email" [(ngModel)]="email" name="email" required>
+        <label for="attendees">Number of Attendees:</label>
+        <div class="attendees-counter">
+            <button type="button" (click)="decrementAttendees()">-</button>
+            <input type="number" id="attendees" [(ngModel)]="attendees" name="attendees" required readonly>
+            <button type="button" (click)="incrementAttendees()">+</button>
+        </div>
+        
+        <button type="submit">Confirm</button>
+      </form>
+    </div>
+  </div>
+  
