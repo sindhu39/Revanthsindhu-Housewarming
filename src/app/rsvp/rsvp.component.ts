@@ -13,24 +13,24 @@ import { CommonModule } from '@angular/common';
 export class RsvpComponent {
   name: string = '';
   email: string = '';
-  attendees: number = 0;
+  persons: number = 0;
   detailsVisible: boolean = false;
 
   constructor(private http: HttpClient) {}
 
   submitRsvp() {
-    const rsvpDetails = { name: this.name, email: this.email };
-    this.http.post('http://your-golang-api-url/rsvp', rsvpDetails).subscribe(response => {
+    const rsvpDetails = { name: this.name, email: this.email,persons: this.persons };
+    this.http.post('https://rsvp-backendrs.herokuapp.com/rsvp', rsvpDetails).subscribe(response => {
       console.log('RSVP confirmed', response);
     });
   }
   incrementAttendees() {
-    this.attendees += 1;
+    this.persons += 1;
   }
 
   decrementAttendees() {
-    if (this.attendees > 0) {
-      this.attendees -= 1;
+    if (this.persons > 0) {
+      this.persons -= 1;
     }
   }
 }
