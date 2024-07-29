@@ -26,7 +26,7 @@
     background-color: #45a049;
   }
   .invitation {
-    background-image: url('/assets/Invitation7.jpg');
+    background-image: url('/assets/invitation10.jpg');
     background-size: cover;
     background-position: left;
     background-repeat: no-repeat;
@@ -43,7 +43,7 @@
     text-align: center;
     position: relative; /* Allows for positioning of child elements */
     top: -30px; /* Move the container up */
-    color: lightcoral; /* Dark Purple Text */
+    color: black; /* Dark Purple Text */
     border: 3px solid #FFD700; /* Gold Border around the heading */
   }
     /* Style for the overlay image */
