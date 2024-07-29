@@ -20,7 +20,7 @@ export class RsvpComponent {
 
   submitRsvp() {
     const rsvpDetails = { name: this.name, email: this.email,persons: this.persons };
-    this.http.post('https://rsvp-backendrs.herokuapp.com/rsvp', rsvpDetails).subscribe(response => {
+    this.http.post('https://rsvp-backendrs-cd88dcc6415a.herokuapp.com/rsvp', rsvpDetails).subscribe(response => {
       console.log('RSVP confirmed', response);
     });
   }
