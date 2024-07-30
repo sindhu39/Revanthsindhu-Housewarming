@@ -3,8 +3,10 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    height: 100vh;
-    display: flex;
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: hidden;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -47,9 +49,12 @@
     color: green;
   }
   
-  @media (min-width: 600px) {
+  @media (min-width: 768px) {
     .invitation h1 {
       font-size: 3em; /* Larger font size for larger screens */
+    }
+    .invitation {
+         background-size: contain;
     }
   
     .invitation button {
