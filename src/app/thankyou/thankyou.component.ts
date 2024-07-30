@@ -4,7 +4,7 @@ import { RouterModule, Router } from '@angular/router';
 @Component({
   selector: 'app-thankyou',
   template: `
-    <div class="thank-you-container">
+    <div class="thank-you-container" content="width=device-width, initial-scale=1, user-scalable=no">
     <img src="assets/thankyou.jpg" alt="Thank You" class="thank-you-image">
       <h1>Your RSVP has been successfully submitted.</h1>
       <button (click)="goHome()">Return Home</button>
