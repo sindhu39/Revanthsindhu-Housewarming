@@ -2,13 +2,14 @@ import { Component } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
+import { RouterModule, Router } from '@angular/router';
 
 @Component({
   selector: 'app-rsvp',
   templateUrl: './rsvp.component.html',
   styleUrls: ['./rsvp.component.css'],
   standalone: true,
-  imports: [FormsModule, CommonModule]
+  imports: [FormsModule, CommonModule, RouterModule]
 })
 export class RsvpComponent {
   name: string = '';
@@ -16,14 +17,21 @@ export class RsvpComponent {
   persons: number = 0;
   detailsVisible: boolean = false;
 
-  constructor(private http: HttpClient) {}
+  constructor(private http: HttpClient, private router: Router) {}
 
   submitRsvp() {
-    const rsvpDetails = { name: this.name, email: this.email,persons: this.persons };
-    this.http.post('https://rsvp-backendrs-cd88dcc6415a.herokuapp.com/rsvp', rsvpDetails).subscribe(response => {
-      console.log('RSVP confirmed', response);
+    const rsvpDetails = { name: this.name, email: this.email, persons: this.persons };
+    this.http.post('https://rsvp-backendrs-cd88dcc6415a.herokuapp.com/rsvp', rsvpDetails).subscribe({
+      next: (response) => {
+        console.log('RSVP confirmed', response);
+        this.router.navigate(['/thank-you']); // Redirect after submission
+      },
+      error: (error) => {
+        console.error('Error submitting RSVP', error);
+      }
     });
   }
+
   incrementAttendees() {
     this.persons += 1;
   }
