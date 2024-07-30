@@ -24,7 +24,7 @@ export class RsvpComponent {
     this.http.post('https://rsvp-backendrs-cd88dcc6415a.herokuapp.com/rsvp', rsvpDetails).subscribe({
       next: (response) => {
         console.log('RSVP confirmed', response);
-        this.router.navigate(['/thank-you']); // Redirect after submission
+        this.router.navigate(['/thankyou']); // Redirect after submission
       },
       error: (error) => {
         console.error('Error submitting RSVP', error);
