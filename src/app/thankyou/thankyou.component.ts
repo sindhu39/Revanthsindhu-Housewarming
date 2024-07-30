@@ -6,8 +6,7 @@ import { RouterModule, Router } from '@angular/router';
   template: `
     <div class="thank-you-container">
     <img src="assets/thankyou.jpg" alt="Thank You" class="thank-you-image">
-      <h1>Thank You!</h1>
-      <p>Your RSVP has been successfully submitted.</p>
+      <h1>Your RSVP has been successfully submitted.</h1>
       <button (click)="goHome()">Return Home</button>
     </div>
   `,
